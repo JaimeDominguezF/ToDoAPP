@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:todoapp/pages/HomePage.dart';
 
-void main() {
+void main() async{
+
+  //inicializar Hive
+
+  await Hive.initFlutter();
+
+  //abrir una caja
+
+  var box = await Hive.openBox('micaja');
+
   runApp(const MyApp());
 }
 
